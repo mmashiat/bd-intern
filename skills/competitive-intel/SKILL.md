@@ -12,7 +12,7 @@ Read `config/company.yaml` from the bd-intern plugin directory. Use:
 - `competitors[]` — for known competitors
 - `paths.research` — for saving output
 
-If config is missing, stop and tell the user to run `/bd setup`.
+If config is missing, stop and tell the user to run `/bd-intern setup`.
 
 ## BOSS Skill Delegation
 Check for a `comparative-research` BOSS skill. If found, delegate head-to-head comparisons.

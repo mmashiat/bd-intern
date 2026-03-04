@@ -4,7 +4,7 @@
 Create sales content: client meeting decks, pre-call briefings, post-meeting debriefs, technical briefs, one-pagers, and competitive positioning documents.
 
 ## Step 0: Load Config
-Read `config/company.yaml` from the bd-intern plugin directory. Use company name, products, engagement offer, brand voice, and contact email. If config is missing, stop and tell the user to run `/bd setup`.
+Read `config/company.yaml` from the bd-intern plugin directory. Use company name, products, engagement offer, brand voice, and contact email. If config is missing, stop and tell the user to run `/bd-intern setup`.
 
 Also load `references/product-knowledge.md` if it exists — this is the ground truth for product claims. Never fabricate capabilities not in this file.
 

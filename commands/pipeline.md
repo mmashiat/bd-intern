@@ -4,7 +4,7 @@
 Quick pipeline view, creation, updates, and health checks.
 
 ## Step 0: Load Config
-Read `config/company.yaml` from the bd-intern plugin directory. Use `crm.team_name` for the pipeline team. If config is missing, stop and tell the user to run `/bd setup`.
+Read `config/company.yaml` from the bd-intern plugin directory. Use `crm.team_name` for the pipeline team. If config is missing, stop and tell the user to run `/bd-intern setup`.
 
 ## Step 1: Parse Sub-Command
 

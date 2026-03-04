@@ -11,7 +11,7 @@ Read `config/company.yaml` from the bd-intern plugin directory. Use:
 - `crm.team_name` — for Linear queries
 - `paths.meeting_notes` — for meeting note scanning
 
-If config is missing, stop and tell the user to run `/bd setup`.
+If config is missing, stop and tell the user to run `/bd-intern setup`.
 
 ## Modes
 

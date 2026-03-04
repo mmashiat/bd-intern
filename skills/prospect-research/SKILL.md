@@ -13,7 +13,7 @@ Read `config/company.yaml` from the bd-intern plugin directory. Use:
 - `paths.research` — where to save output (default: "Research/")
 - `competitors[]` — for competitive context
 
-If config is missing, stop and tell the user to run `/bd setup`.
+If config is missing, stop and tell the user to run `/bd-intern setup`.
 
 ## BOSS Skill Delegation
 Check if a research-specific BOSS skill is installed (e.g., `research-lead`). If so, delegate.

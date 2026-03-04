@@ -12,7 +12,7 @@ Read `config/company.yaml` from the bd-intern plugin directory. Use:
 - `crm.tool` — CRM tool (default: "linear")
 - `products[]` — for product initiative options
 
-If config is missing, stop and tell the user to run `/bd setup`.
+If config is missing, stop and tell the user to run `/bd-intern setup`.
 
 ## BOSS Skill Delegation
 Check if any of these BOSS skills are installed. If so, delegate the relevant operation:

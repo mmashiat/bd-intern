@@ -1,6 +1,6 @@
 # BD Intern Agent — Company Configuration
 # Copy this file to config/company.yaml and fill in your details.
-# Run `/bd setup` for an interactive wizard that generates this file.
+# Run `/bd-intern setup` for an interactive wizard that generates this file.
 
 # ─── REQUIRED ───────────────────────────────────────────────────────────────
 

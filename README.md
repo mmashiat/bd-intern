@@ -17,7 +17,7 @@ git clone https://github.com/mmashiat/bd-intern.git ~/.claude/plugins/bd-intern
 Start Claude Code and run:
 
 ```
-/bd setup
+/bd-intern setup
 ```
 
 The setup wizard walks you through creating your `config/company.yaml`. Takes ~2 minutes.
@@ -31,7 +31,7 @@ cp ~/.claude/plugins/bd-intern/config/company.example.yaml ~/.claude/plugins/bd-
 ### 3. Use
 
 ```
-/bd                          # Main menu
+/bd-intern                   # Main menu
 /pipeline                    # View your deal pipeline
 /prospect <company>          # Research a prospect
 /outreach <company>          # Draft outreach messages
@@ -113,7 +113,7 @@ The `examples/` directory contains sample configs and outputs using fictional co
 
 ## Updating
 
-BD Intern auto-updates on every `/bd` invocation (silent `git pull`). Manual update:
+BD Intern auto-updates on every `/bd-intern` invocation (silent `git pull`). Manual update:
 
 ```bash
 cd ~/.claude/plugins/bd-intern && git pull

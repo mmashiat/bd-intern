@@ -1,11 +1,11 @@
-# /bd setup — Interactive Setup Wizard
+# /bd-intern setup — Interactive Setup Wizard
 
 ## Purpose
 Guide first-time users through creating their `config/company.yaml` file.
 
 ## Trigger
-- Automatically launched when `/bd` detects no `config/company.yaml`
-- Manually via `/bd setup`
+- Automatically launched when `/bd-intern` detects no `config/company.yaml`
+- Manually via `/bd-intern setup`
 
 ## Behavior
 
@@ -59,11 +59,11 @@ You're all set. Here's what I configured:
 - Voice: {tone or "default (direct, specific)"}
 
 Try these commands:
-- /bd pipeline — View your deal pipeline
+- /bd-intern pipeline — View your deal pipeline
 - /prospect <company> — Research a prospect
 - /outreach <company> — Draft outreach
 
-Run /bd setup anytime to reconfigure.
+Run /bd-intern setup anytime to reconfigure.
 ```
 
 ### Step 6: Offer Product Knowledge

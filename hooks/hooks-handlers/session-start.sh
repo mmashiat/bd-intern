@@ -9,7 +9,7 @@ echo "--- BD Intern Agent ---"
 
 # Check for config
 if [ ! -f "$CONFIG" ]; then
-  echo "⚠ No config found. Run /bd setup to configure."
+  echo "⚠ No config found. Run /bd-intern setup to configure."
   exit 0
 fi
 

@@ -12,7 +12,7 @@ Read `config/company.yaml` from the bd-intern plugin directory. Use:
 - `pipeline.engagement_offer` — for desired outcomes
 - `paths.research`, `paths.meeting_notes` — for intelligence gathering
 
-If config is missing, stop and tell the user to run `/bd setup`.
+If config is missing, stop and tell the user to run `/bd-intern setup`.
 
 ## Step 1: Gather Context
 

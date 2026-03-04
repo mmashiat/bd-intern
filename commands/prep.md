@@ -4,7 +4,7 @@
 Generate a comprehensive pre-meeting briefing document.
 
 ## Step 0: Load Config
-Read `config/company.yaml` from the bd-intern plugin directory. Use company products and engagement offer. If config is missing, stop and tell the user to run `/bd setup`.
+Read `config/company.yaml` from the bd-intern plugin directory. Use company products and engagement offer. If config is missing, stop and tell the user to run `/bd-intern setup`.
 
 ## Step 1: Gather Context
 - Company name (from argument)

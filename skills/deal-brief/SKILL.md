@@ -13,7 +13,7 @@ Read `config/company.yaml` from the bd-intern plugin directory. Use:
 - `crm.team_name` — for Linear queries
 - `paths.research`, `paths.meeting_notes`, `paths.content` — for intelligence
 
-If config is missing, stop and tell the user to run `/bd setup`.
+If config is missing, stop and tell the user to run `/bd-intern setup`.
 
 ## Step 1: Identify Deal
 

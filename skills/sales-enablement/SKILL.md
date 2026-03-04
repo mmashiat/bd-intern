@@ -18,7 +18,7 @@ Read `config/company.yaml` from the bd-intern plugin directory. Use ALL fields:
 
 Also load `references/product-knowledge.md` if it exists. This file is ground truth for product claims. **Never fabricate capabilities not documented here.**
 
-If config is missing, stop and tell the user to run `/bd setup`.
+If config is missing, stop and tell the user to run `/bd-intern setup`.
 
 ## Step 0b: Load Client Context (Critical — Do This ALWAYS)
 

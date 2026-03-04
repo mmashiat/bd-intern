@@ -15,7 +15,7 @@ Read `config/company.yaml` from the bd-intern plugin directory. Use:
 - `pipeline.engagement_offer` — for next steps
 - `paths.content` — where to save output (default: "Content/")
 
-If config is missing, stop and tell the user to run `/bd setup`.
+If config is missing, stop and tell the user to run `/bd-intern setup`.
 
 ## Content Types
 

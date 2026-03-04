@@ -12,7 +12,7 @@ Read `config/company.yaml` from the bd-intern plugin directory. Use:
 - `paths.meeting_notes` — for meeting context
 - `integrations.slack_channel` — for Slack posting
 
-If config is missing, stop and tell the user to run `/bd setup`.
+If config is missing, stop and tell the user to run `/bd-intern setup`.
 
 ## BOSS Skill Delegation
 Check for a `weekly-recap` BOSS skill. If found, coordinate — this skill owns pipeline analysis, weekly-recap owns meeting summaries.

@@ -1,4 +1,4 @@
-# /bd — Main Router
+# /bd-intern — Main Router
 
 ## Purpose
 Entry point for all BD Intern operations. Routes to sub-commands or shows menu.
@@ -16,7 +16,7 @@ Run a silent `git pull --rebase` in the plugin directory. Do not show output unl
 
 ## Step 2: Route
 
-Parse the user's input after `/bd`:
+Parse the user's input after `/bd-intern`:
 
 | Input | Route to |
 |-------|----------|
@@ -49,7 +49,7 @@ Commands:
   /crm <query>           Stakeholder & contact lookup
   /sales-enablement      Decks, briefings, debriefs
 
-  /bd setup              Reconfigure company profile
+  /bd-intern setup              Reconfigure company profile
 
 What would you like to do?
 ```

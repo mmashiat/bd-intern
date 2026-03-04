@@ -30,7 +30,7 @@ Every skill and agent follows this pattern:
 ```
 Step 0: Load config/company.yaml from the bd-intern plugin directory.
 Use the company name, products, voice, and other settings throughout this task.
-If config is missing, stop and tell the user to run `/bd setup`.
+If config is missing, stop and tell the user to run `/bd-intern setup`.
 ```
 
 The LLM naturally incorporates config values — no template engine needed.
@@ -39,8 +39,8 @@ The LLM naturally incorporates config values — no template engine needed.
 
 | Command | Description |
 |---------|-------------|
-| `/bd` | Main menu / router |
-| `/bd setup` | Interactive setup wizard (first-time configuration) |
+| `/bd-intern` | Main menu / router |
+| `/bd-intern setup` | Interactive setup wizard (first-time configuration) |
 | `/pipeline` | Pipeline view and management |
 | `/prospect <company>` | Research a prospect |
 | `/outreach <company>` | Draft outreach messages |
