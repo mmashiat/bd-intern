@@ -10,6 +10,9 @@ company:
   description: >
     Acme Corp builds developer tools for distributed systems.
     We help teams ship reliable infrastructure 10x faster.
+  industry: "Developer Tools"              # Your industry/vertical
+  stage: "Series A"                        # Company stage (pre-seed, seed, Series A/B/C, growth, public)
+  team_size: 35                            # Approximate team size
 
 # At least one product is required
 products:
@@ -21,8 +24,18 @@ products:
     description: >
       Real-time data synchronization SDK for mobile and edge applications.
 
+# Target customer profile
+target_customers: "Engineering teams at mid-market SaaS companies running multi-region deployments"
+typical_deal_size: "$25K/year"             # Helps calibrate outreach tone
+sales_cycle: "6-8 weeks"                   # First contact to close
+
 contact:
   email: "partnerships@acme.example.com"   # Primary BD contact email
+  name: "Alex Kim"                         # Your name (for signatures)
+  role: "Head of Partnerships"             # Your title
+  channels:                                # Preferred outreach channels
+    - "email"
+    - "linkedin"
 
 # ─── OPTIONAL ───────────────────────────────────────────────────────────────
 
@@ -44,6 +57,9 @@ brand_voice:
     - "specifically"
     - "concretely"
     - "measurably"
+  differentiator: >
+    Only distributed database that handles conflict resolution
+    at the edge with sub-millisecond latency.
 
 # CRM / pipeline settings
 crm:
@@ -74,6 +90,11 @@ competitors:
   - name: "SyncTech"
     products: ["SyncEngine"]
     notes: "Competes on real-time sync, weaker on durability"
+
+# When you lose deals, why? (helps sharpen positioning)
+common_loss_reasons:
+  - "Price — enterprise procurement pushes for discounts"
+  - "Already using RivalCo — switching cost too high"
 
 # Integrations
 integrations:

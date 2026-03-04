@@ -6,21 +6,30 @@ A configurable BD (Business Development) agent for [Claude Code](https://claude.
 
 ## Quick Start
 
-### 1. Install
+### 1. Clone the plugin
 
 ```bash
 git clone https://github.com/mmashiat/bd-intern.git ~/.claude/plugins/bd-intern
 ```
 
-### 2. Configure
+### 2. Register the `/bd-intern` command
 
-Start Claude Code and run:
+Claude Code discovers slash commands from skill files. You need to create one:
+
+```bash
+mkdir -p ~/.claude/skills/bd-intern
+cp ~/.claude/plugins/bd-intern/install/SKILL.md ~/.claude/skills/bd-intern/SKILL.md
+```
+
+### 3. Configure
+
+Start a **new Claude Code session** and run:
 
 ```
 /bd-intern setup
 ```
 
-The setup wizard walks you through creating your `config/company.yaml`. Takes ~2 minutes.
+The setup wizard interviews you about your company, products, voice, and pipeline. Takes ~5 minutes. It generates your `config/company.yaml`.
 
 Or copy the example and edit manually:
 
@@ -118,6 +127,70 @@ BD Intern auto-updates on every `/bd-intern` invocation (silent `git pull`). Man
 ```bash
 cd ~/.claude/plugins/bd-intern && git pull
 ```
+
+## FAQ
+
+### `/bd-intern` shows "unknown skill" or doesn't appear as a command
+
+Claude Code registers slash commands from **skill files** in `~/.claude/skills/`, not from plugin directories. Cloning the plugin alone isn't enough — you need to register the command:
+
+```bash
+mkdir -p ~/.claude/skills/bd-intern
+cp ~/.claude/plugins/bd-intern/install/SKILL.md ~/.claude/skills/bd-intern/SKILL.md
+```
+
+Then **restart Claude Code** (start a new session). The `/bd-intern` command should now appear.
+
+### I cloned the repo but nothing happens when I type `/bd-intern`
+
+Three things to check:
+1. **Plugin location**: The repo must be at `~/.claude/plugins/bd-intern/` (not a subdirectory)
+2. **Skill file**: `~/.claude/skills/bd-intern/SKILL.md` must exist (see above)
+3. **New session**: Claude Code loads plugins on startup — you need a fresh session after installing
+
+### How do I reconfigure my company profile?
+
+Run `/bd-intern setup` anytime. It will walk you through the wizard again and overwrite `config/company.yaml`.
+
+Or edit the file directly:
+```bash
+$EDITOR ~/.claude/plugins/bd-intern/config/company.yaml
+```
+
+### Can I use this alongside the Boundless-specific `/bd` agent?
+
+Yes. `/bd-intern` and `/bd` are separate commands with separate skill files and plugin directories. They don't conflict.
+
+### Where does my data go?
+
+- **Config**: `~/.claude/plugins/bd-intern/config/company.yaml` (gitignored, stays local)
+- **Research output**: Wherever you set `paths.research` in config (default: `Research/` in your working directory)
+- **Meeting notes**: Wherever you set `paths.meeting_notes` (default: `~/.meeting-notes/`)
+- **Pipeline**: In your Linear workspace (or configured CRM)
+
+Nothing is sent to external servers beyond what Claude Code and Linear already use.
+
+### How do I add product knowledge for better sales content?
+
+Create `~/.claude/plugins/bd-intern/references/product-knowledge.md` with detailed info about your products — capabilities, specs, use cases, competitive positioning, proof points. The sales-enablement skill uses this as ground truth and won't fabricate claims beyond what's documented.
+
+See `skills/sales-enablement/references/product-knowledge.md` for the template.
+
+### How do I update the plugin?
+
+It auto-updates on every `/bd-intern` invocation. For manual updates:
+```bash
+cd ~/.claude/plugins/bd-intern && git pull
+```
+
+After updating, also refresh the skill file in case it changed:
+```bash
+cp ~/.claude/plugins/bd-intern/install/SKILL.md ~/.claude/skills/bd-intern/SKILL.md
+```
+
+### The setup wizard is too long / I want to skip questions
+
+Say "skip" or "use defaults" at any point during setup. The wizard will fill in sensible defaults for anything you skip. Only company name, one product, and contact email are truly required.
 
 ## License
 
