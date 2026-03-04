@@ -14,14 +14,6 @@ Read `config/company.yaml` from the bd-intern plugin directory. Use:
 
 If config is missing, stop and tell the user to run `/bd-intern setup`.
 
-## BOSS Skill Delegation
-Check if any of these BOSS skills are installed. If so, delegate the relevant operation:
-- `new-lead` — for creating new pipeline entries
-- `update-lead` — for updating existing entries
-- Linear operations skill — for raw Linear queries
-
-If no BOSS skills available, use Linear MCP tools directly.
-
 ## Operations
 
 ### List Active Deals

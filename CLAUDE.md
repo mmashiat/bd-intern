@@ -112,16 +112,6 @@ All paths configurable via `config/company.yaml`:
 | Analyst | Market and competitive analysis | Configurable (default: sonnet) |
 | Pipeline Reviewer | Pipeline health assessment | Configurable (default: sonnet) |
 
-## BOSS Integration (Optional)
-
-If the user has BOSS skills installed (`~/.boss/repo/`, `~/.claude/skills/`), delegate to them when available:
-- Linear operations → team's Linear skill (if available)
-- New leads → `new-lead`
-- Meeting processing → `meeting-recap`
-- Comparative research → `comparative-research`
-
-Check for BOSS skills before executing. If a BOSS skill covers the task, delegate. If partial, use for that part. If none, use built-in skills.
-
 ## Google Docs Publishing (Optional)
 
 If the user has a `push-to-google-docs` skill installed, offer to publish long-form content to Google Docs after generating it.

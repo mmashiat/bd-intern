@@ -109,10 +109,6 @@ examples/     → Example configs and outputs using fictional companies
 4. All output uses your configured brand voice, products, and engagement offer
 5. Pipeline state tracked in Linear (or configured CRM)
 
-## BOSS Integration (Optional)
-
-If your team uses [BOSS](https://github.com/zkmash/boss) for skill sharing, BD Intern delegates to installed BOSS skills when available. No configuration needed — it auto-detects.
-
 ## Examples
 
 The `examples/` directory contains sample configs and outputs using fictional companies:
@@ -158,10 +154,6 @@ Or edit the file directly:
 ```bash
 $EDITOR ~/.claude/plugins/bd-intern/config/company.yaml
 ```
-
-### Can I use this alongside the Boundless-specific `/bd` agent?
-
-Yes. `/bd-intern` and `/bd` are separate commands with separate skill files and plugin directories. They don't conflict.
 
 ### Where does my data go?
 

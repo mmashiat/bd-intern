@@ -99,8 +99,6 @@ common_loss_reasons:
 # Integrations
 integrations:
   slack_channel: "#bd-pipeline"            # Slack channel for pipeline updates
-  # boss_skills: true                      # Enable BOSS skill delegation (if installed)
-
 # Sub-agent model (which Claude model sub-agents use)
 agents:
   model: "sonnet"                          # "sonnet" (default, fast), "opus" (thorough), "haiku" (quick)

@@ -14,9 +14,6 @@ Read `config/company.yaml` from the bd-intern plugin directory. Use:
 
 If config is missing, stop and tell the user to run `/bd-intern setup`.
 
-## BOSS Skill Delegation
-Check for a `weekly-recap` BOSS skill. If found, coordinate — this skill owns pipeline analysis, weekly-recap owns meeting summaries.
-
 ## Step 1: Gather Pipeline Data
 
 Use the **pipeline-reviewer agent** (`agents/pipeline-reviewer.md`):

@@ -19,21 +19,6 @@ if [ -n "$COMPANY" ]; then
   echo "Company: $COMPANY"
 fi
 
-# Check for BOSS skills
-BOSS_DIR="$HOME/.boss/repo"
-SKILLS_DIR="$HOME/.claude/skills"
-if [ -d "$BOSS_DIR" ] || [ -d "$SKILLS_DIR" ]; then
-  BOSS_SKILLS=""
-  for skill in new-lead update-lead meeting-recap comparative-research internal-comms; do
-    if [ -d "$BOSS_DIR/$skill" ] || [ -d "$SKILLS_DIR/$skill" ]; then
-      BOSS_SKILLS="$BOSS_SKILLS $skill"
-    fi
-  done
-  if [ -n "$BOSS_SKILLS" ]; then
-    echo "BOSS skills available:$BOSS_SKILLS"
-  fi
-fi
-
 # Check for meeting notes
 MEETING_NOTES=$(grep "meeting_notes:" "$CONFIG" 2>/dev/null | sed 's/.*: *"\?\([^"]*\)"\?/\1/' | xargs)
 MEETING_NOTES="${MEETING_NOTES:-$HOME/.meeting-notes}"

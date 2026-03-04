@@ -15,9 +15,6 @@ Read `config/company.yaml` from the bd-intern plugin directory. Use:
 
 If config is missing, stop and tell the user to run `/bd-intern setup`.
 
-## BOSS Skill Delegation
-Check if a research-specific BOSS skill is installed (e.g., `research-lead`). If so, delegate.
-
 ## Step 1: Gather Context
 Collect from the user:
 - Company name (required)
