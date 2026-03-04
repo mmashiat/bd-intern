@@ -1,20 +1,20 @@
 # BD Intern Agent
 
-Welcome to your first BD hire! Build you Business Development team in < 30 seconds. 
+Welcome to your first BD hire! Build you Business Development team in < 30 seconds staright from the CLI. 
 
-A configurable BD (Business Development) agent for [Claude Code](https://claude.com/claude-code). Automates prospect research, outreach drafting, deal pipeline management, meeting prep, competitive analysis, and content creation.
+A configurable BD (Business Development) agent for [Claude Code](https://claude.com/claude-code). Automates prospect research, outreach drafting, deal pipeline management, meeting prep, competitive analysis, and content creation. 
 
 **Works for any company** — configure once with your company details, products, and voice, then use immediately.
 
 ## Quick Start
 
-### 1. Clone the plugin
+### 1. Open your Terminal and Clone the plugin
 
 ```bash
 git clone https://github.com/mmashiat/bd-intern.git ~/.claude/plugins/bd-intern
 ```
 
-### 2. Register the `/bd-intern` command
+### 2. enter a new Claude Code session and register the `/bd-intern` command
 
 Claude Code discovers slash commands from skill files. You need to create one:
 
