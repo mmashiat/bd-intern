@@ -1,0 +1,5 @@
+config/company.yaml
+.DS_Store
+*.swp
+*.swo
+*~

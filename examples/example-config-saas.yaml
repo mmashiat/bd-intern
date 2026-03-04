@@ -1,0 +1,78 @@
+# Example config for a fictional SaaS company
+# Copy to config/company.yaml and customize
+
+company:
+  name: "NovaPay"
+  website: "https://novapay.example.com"
+  description: >
+    NovaPay provides payment infrastructure for SaaS platforms.
+    We enable any software company to embed payments, lending,
+    and financial accounts directly into their product.
+
+products:
+  - name: "NovaPay Connect"
+    description: >
+      Payment processing API that handles card payments, ACH transfers,
+      and wire transfers. Single integration, 40+ payment methods,
+      150+ currencies.
+  - name: "NovaPay Capital"
+    description: >
+      Embedded lending product. SaaS platforms offer working capital
+      loans to their merchants through a white-label interface.
+      Underwriting powered by transaction data.
+
+contact:
+  email: "partnerships@novapay.example.com"
+
+brand_voice:
+  tone: "confident and precise"
+  personality:
+    - "lead with data"
+    - "respect the reader's time"
+    - "technical but accessible"
+  avoid_words:
+    - "synergy"
+    - "disrupt"
+    - "game-changing"
+    - "notably"
+    - "furthermore"
+  prefer_words:
+    - "specifically"
+    - "measurably"
+    - "directly"
+
+crm:
+  team_name: "Partnerships"
+  tool: "linear"
+
+paths:
+  meeting_notes: "~/.meeting-notes/"
+  research: "Research/"
+  content: "Content/"
+
+pipeline:
+  engagement_offer:
+    name: "Integration Pilot"
+    description: >
+      3-week scoped integration. We handle the technical work,
+      you provide API access and feedback. Weekly syncs,
+      live demo at week 3.
+    duration: "3 weeks"
+    cost: "No cost"
+
+competitors:
+  - name: "Stripe"
+    products: ["Stripe Connect", "Stripe Capital"]
+    notes: "Dominant in developer-first payments. Weaker in embedded lending."
+  - name: "Adyen"
+    products: ["Adyen for Platforms"]
+    notes: "Strong in enterprise. More expensive, longer integration."
+  - name: "Marqeta"
+    products: ["Marqeta Platform"]
+    notes: "Card issuing focus. Less payments breadth."
+
+integrations:
+  slack_channel: "#bd-pipeline"
+
+agents:
+  model: "sonnet"

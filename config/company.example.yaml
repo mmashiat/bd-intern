@@ -1,0 +1,85 @@
+# BD Intern Agent — Company Configuration
+# Copy this file to config/company.yaml and fill in your details.
+# Run `/bd setup` for an interactive wizard that generates this file.
+
+# ─── REQUIRED ───────────────────────────────────────────────────────────────
+
+company:
+  name: "Acme Corp"                        # Your company name
+  website: "https://acme.example.com"      # Company website
+  description: >
+    Acme Corp builds developer tools for distributed systems.
+    We help teams ship reliable infrastructure 10x faster.
+
+# At least one product is required
+products:
+  - name: "AcmeDB"
+    description: >
+      Distributed database with built-in replication and conflict resolution.
+      Targets teams running multi-region deployments.
+  - name: "AcmeSync"
+    description: >
+      Real-time data synchronization SDK for mobile and edge applications.
+
+contact:
+  email: "partnerships@acme.example.com"   # Primary BD contact email
+
+# ─── OPTIONAL ───────────────────────────────────────────────────────────────
+
+# Brand voice settings — how outreach and content should sound
+brand_voice:
+  tone: "direct and technical"             # e.g., "friendly and casual", "formal and authoritative"
+  personality:
+    - "specific over vague"
+    - "show don't tell"
+    - "lead with value"
+  avoid_words:
+    - "synergy"
+    - "leverage"
+    - "cutting-edge"
+    - "revolutionary"
+    - "notably"
+    - "furthermore"
+  prefer_words:
+    - "specifically"
+    - "concretely"
+    - "measurably"
+
+# CRM / pipeline settings
+crm:
+  team_name: "Partnerships"                # Linear team name for BD pipeline
+  tool: "linear"                           # CRM tool: "linear" (default), "notion", "other"
+
+# File paths
+paths:
+  meeting_notes: "~/.meeting-notes/"       # Where meeting notes/recaps live
+  research: "Research/"                    # Where prospect research is saved
+  content: "Content/"                      # Where generated content is saved
+
+# Your standard engagement offer (presented at end of outreach/decks)
+pipeline:
+  engagement_offer:
+    name: "Pilot Program"
+    description: >
+      4-week scoped integration pilot. We handle implementation,
+      you provide feedback. Weekly syncs, final demo at week 4.
+    duration: "4 weeks"
+    cost: "No cost"
+
+# Known competitors (used for competitive intel and positioning)
+competitors:
+  - name: "RivalCo"
+    products: ["RivalDB"]
+    notes: "Main competitor in distributed database space"
+  - name: "SyncTech"
+    products: ["SyncEngine"]
+    notes: "Competes on real-time sync, weaker on durability"
+
+# Integrations
+integrations:
+  slack_channel: "#bd-pipeline"            # Slack channel for pipeline updates
+  # boss_skills: true                      # Enable BOSS skill delegation (if installed)
+
+# Sub-agent model (which Claude model sub-agents use)
+agents:
+  model: "sonnet"                          # "sonnet" (default, fast), "opus" (thorough), "haiku" (quick)

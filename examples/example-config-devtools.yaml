@@ -1,0 +1,77 @@
+# Example config for a fictional developer tools company
+# Copy to config/company.yaml and customize
+
+company:
+  name: "Lattice Labs"
+  website: "https://latticelabs.example.com"
+  description: >
+    Lattice Labs builds observability tools for distributed systems.
+    Our platform gives engineering teams real-time visibility into
+    microservice health, latency, and failure modes.
+
+products:
+  - name: "Lattice Trace"
+    description: >
+      Distributed tracing platform. Auto-instruments services,
+      correlates traces across 50+ frameworks, sub-millisecond
+      overhead. Used by 200+ engineering teams.
+  - name: "Lattice Monitor"
+    description: >
+      Infrastructure monitoring with ML-powered anomaly detection.
+      Alerts on actual problems, not threshold noise.
+      Integrates with PagerDuty, Slack, and OpsGenie.
+
+contact:
+  email: "partnerships@latticelabs.example.com"
+
+brand_voice:
+  tone: "direct and deeply technical"
+  personality:
+    - "engineers talking to engineers"
+    - "show the benchmarks"
+    - "skeptical of hype"
+  avoid_words:
+    - "AI-powered"
+    - "next-generation"
+    - "revolutionary"
+    - "seamlessly"
+  prefer_words:
+    - "specifically"
+    - "benchmarked at"
+    - "in production"
+
+crm:
+  team_name: "BD"
+  tool: "linear"
+
+paths:
+  meeting_notes: "~/.meeting-notes/"
+  research: "Research/"
+  content: "Content/"
+
+pipeline:
+  engagement_offer:
+    name: "Proof of Concept"
+    description: >
+      2-week instrumentation POC. We deploy Lattice Trace on
+      3 of your services. You get a full observability dashboard
+      with zero config changes. We handle everything.
+    duration: "2 weeks"
+    cost: "Free"
+
+competitors:
+  - name: "Datadog"
+    products: ["APM", "Infrastructure Monitoring"]
+    notes: "Market leader. Expensive at scale. Feature bloat."
+  - name: "Honeycomb"
+    products: ["Honeycomb"]
+    notes: "Strong in observability-native teams. Weaker in traditional monitoring."
+  - name: "New Relic"
+    products: ["New Relic One"]
+    notes: "Broad platform. Pricing recently changed. Migration opportunity."
+
+integrations:
+  slack_channel: "#partnerships"
+
+agents:
+  model: "sonnet"

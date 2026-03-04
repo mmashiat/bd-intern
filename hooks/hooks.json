@@ -1,0 +1,9 @@
+{
+  "hooks": [
+    {
+      "event": "session_start",
+      "command": "bash hooks/hooks-handlers/session-start.sh",
+      "description": "Load BD context on session start"
+    }
+  ]
+}
