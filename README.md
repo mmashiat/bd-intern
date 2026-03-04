@@ -1,5 +1,7 @@
 # BD Intern Agent
 
+Welcome to your first BD hire! Build you Business Development team in < 30 seconds. 
+
 A configurable BD (Business Development) agent for [Claude Code](https://claude.com/claude-code). Automates prospect research, outreach drafting, deal pipeline management, meeting prep, competitive analysis, and content creation.
 
 **Works for any company** — configure once with your company details, products, and voice, then use immediately.
