@@ -19,25 +19,25 @@ This takes about 2 minutes. I'll create your config/company.yaml file.
 ### Step 2: Company Basics
 
 1. **Company name and website**: "What's your company name and website?"
-   - Use WebFetch to scrape the website
+   - Use WebFetch to scrape the website — extract description, products/services, team info
    - Use WebSearch to find additional context (Crunchbase, LinkedIn, press, etc.)
-   - Auto-derive: description, industry/vertical, stage, and team size
-2. **Confirm profile**: Present what you found and ask: "Here's what I found — anything to correct or add?"
-   - Show: description, industry, stage, team size
-   - Let them correct anything that's off
+   - Auto-derive: description, industry/vertical, stage, team size, AND initial product list
    - If scraping fails or info is sparse, fall back to asking directly
+2. **Confirm profile**: Present what you found and ask: "Here's what I found — anything to correct or add?"
+   - Show: description, industry, stage, team size, products found
+   - Let them correct anything that's off
 
 ### Step 3: Products & Market
 
-3. **Product links**: "Drop any links that describe your products or services — website pages, landing pages, pitch decks, Product Hunt, app store listings, whatever you've got. I'll scrape them and build your product profile."
-   - Accept multiple URLs
-   - Scrape each link using WebFetch to extract product names, descriptions, features, pricing
-   - Synthesize into structured `products[]` entries in the config
-   - If they have no links, fall back to: "No worries — just give me a quick rundown of what you sell."
+3. **Additional product links** (if needed): "I found these products on your site: {list}. Any other links I should check — landing pages, pitch decks, Product Hunt, etc.?"
+   - Only ask if the website scrape in Step 2 missed products or the user wants to add more
+   - Scrape additional links using WebFetch
+   - Skip entirely if Step 2 already captured everything and user confirmed
 4. **Example customers**: "Name 2-3 companies or people that are your ideal customers — actual names, not categories. (e.g., 'Uniswap', 'a16z', 'Shopify'). I'll use these to build out your customer segmentation."
    - Store the examples in `target_customers.examples[]`
-   - Analyze the examples to derive `target_customers.segments` — industry, size, stage, common traits
+   - Use WebSearch to research the examples and derive `target_customers.segments` — industry, size, stage, common traits
    - Generate a brief customer profile summary in `target_customers.description`
+   - Confirm: "Based on those, your target segments look like {segments}. Sound right?"
 5. **Deal basics**: "Roughly — what's a typical deal worth and how long does it take to close? (e.g., '$10K/month, about 3 weeks' or 'varies widely')"
    - Parse into `typical_deal_size` and `sales_cycle`
    - One question instead of two — keep it moving
@@ -96,10 +96,10 @@ Present this as a questionnaire. Ask: "What are the different tools that you use
 
 ### Step 8: Documentation & Context
 
-17. **Documentation links**: "Do you have any links to documentation, pitch decks, wikis, or context about what you're building and why? Drop them here — websites, Google Docs, Notion pages, GitHub repos, anything. The more context I have, the better I can represent your company."
-    - Accept multiple links
-    - Store in `references.documentation_links` in the config as a list
-    - If they also have local files, remind them about `references/product-knowledge.md`
+17. **Documentation and resources**: "Last thing — any docs, pitch decks, wikis, or other context I should know about? This can be links (Google Docs, Notion, GitHub) or local files. The more context I have, the better I can represent your company."
+    - Accept multiple links — store in `references.documentation_links` in the config as a list
+    - Mention: "You can also drop local files (PDFs, markdown, specs) into `references/product-knowledge.md` in the plugin directory anytime — I'll use them as ground truth for all sales content."
+    - This single step replaces both documentation collection AND the old "product knowledge" offer
 
 ### Step 9: Generate Config
 
@@ -126,11 +126,15 @@ Display:
 Config saved to config/company.yaml!
 
 Here's your profile:
-- Company: {name} ({industry}, {stage})
+- Company: {name} ({industry}, {stage}, ~{team_size} people)
 - Products: {list}
-- Target: {target_customers}
-- Contact: {name} ({email})
+- Target: {target_customers.description} (examples: {examples})
+- Deal: {typical_deal_size}, ~{sales_cycle} cycle
+- Contact: {name}, {role} ({email})
+- Channels: {channels list}
+- Engagement offer: {engagement_offer}
 - Voice: {tone}
+- Avoid: {avoid_words list}
 - Differentiator: {differentiator}
 - Tools: {tools list}
 - Competitors: {list}
@@ -143,10 +147,6 @@ Try these commands:
 
 Run /bd-intern setup anytime to reconfigure.
 ```
-
-### Step 11: Offer Product Knowledge
-
-Ask: "One last thing — if you have detailed product docs, pitch decks, or technical specs as local files, drop them into `references/product-knowledge.md` in the plugin directory. I'll use them as ground truth for all sales content. You can do this now or later."
 
 ## Notes
 - Be conversational, not form-like — this should feel like an onboarding chat, not a form

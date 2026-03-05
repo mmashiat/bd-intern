@@ -25,7 +25,16 @@ products:
       Real-time data synchronization SDK for mobile and edge applications.
 
 # Target customer profile
-target_customers: "Engineering teams at mid-market SaaS companies running multi-region deployments"
+target_customers:
+  examples:                                # 2-3 real companies that represent your ideal customer
+    - "Vercel"
+    - "PlanetScale"
+    - "Render"
+  segments:                                # Auto-derived from examples during setup
+    - "Mid-market SaaS companies running multi-region deployments"
+    - "Developer platform teams needing real-time data sync"
+  description: "Engineering teams at mid-market SaaS companies running multi-region deployments"
+
 typical_deal_size: "$25K/year"             # Helps calibrate outreach tone
 sales_cycle: "6-8 weeks"                   # First contact to close
 
@@ -46,6 +55,9 @@ brand_voice:
     - "specific over vague"
     - "show don't tell"
     - "lead with value"
+  samples_analysis: >                      # Auto-generated from voice samples during setup
+    Short sentences. Avoids hedging. Uses "you" more than "we".
+    Technical but not academic. Occasional dry humor.
   avoid_words:
     - "synergy"
     - "leverage"
@@ -61,10 +73,29 @@ brand_voice:
     Only distributed database that handles conflict resolution
     at the edge with sub-millisecond latency.
 
+# Tools inventory — what you use and for what
+tools:
+  - name: "Gmail"
+    category: "communication"
+    use_case: "Outreach and follow-ups"
+    has_mcp: true
+  - name: "Linear"
+    category: "project_management"
+    use_case: "Pipeline tracking and deal management"
+    has_mcp: true
+  - name: "Google Calendar"
+    category: "calendar"
+    use_case: "Meeting scheduling"
+    has_mcp: false
+  - name: "Notion"
+    category: "notes"
+    use_case: "Internal docs and meeting notes"
+    has_mcp: false
+
 # CRM / pipeline settings
 crm:
   team_name: "Partnerships"                # Linear team name for BD pipeline
-  tool: "linear"                           # CRM tool: "linear" (default), "notion", "other"
+  tool: "linear"                           # CRM tool: "linear", "hubspot", "clay", "airtable", "notion", "google_sheets", "salesforce"
 
 # File paths
 paths:
@@ -96,9 +127,17 @@ common_loss_reasons:
   - "Price — enterprise procurement pushes for discounts"
   - "Already using RivalCo — switching cost too high"
 
+# Documentation and references
+references:
+  documentation_links:                     # Links to docs, pitch decks, wikis, etc.
+    - "https://docs.acme.example.com"
+    - "https://notion.so/acme/pitch-deck"
+  # Also drop local files into references/product-knowledge.md for ground truth
+
 # Integrations
 integrations:
   slack_channel: "#bd-pipeline"            # Slack channel for pipeline updates
+
 # Sub-agent model (which Claude model sub-agents use)
 agents:
   model: "sonnet"                          # "sonnet" (default, fast), "opus" (thorough), "haiku" (quick)
