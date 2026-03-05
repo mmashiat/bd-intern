@@ -94,14 +94,42 @@ Present this as a questionnaire. Ask: "What are the different tools that you use
     - Collect 2-3 competitors. Ask "Any more?" after each until they say done or skip.
 16. **Win/loss insight**: "When you lose deals, what's the most common reason? (e.g., 'price', 'they already use X', 'timing')"
 
-### Step 8: Documentation & Context
+### Step 8: Daily Agenda
 
-17. **Documentation and resources**: "Last thing — any docs, pitch decks, wikis, or other context I should know about? This can be links (Google Docs, Notion, GitHub) or local files. The more context I have, the better I can represent your company."
+After the tools inventory, offer the daily agenda feature:
+
+17. **Daily agenda**: "Want a daily morning briefing? I can scan your calendar, Slack, and email each morning and give you a quick rundown of your day — meetings, messages, and pipeline updates. I can deliver it to your terminal, Slack, email, or both."
+    - If yes, ask:
+      - "Where should I deliver it?" — terminal (default), slack, email, or both
+      - If Slack: "What's your Slack user ID? (You can find it in your Slack profile under 'More' > 'Copy member ID')"
+      - If email: confirm the contact email from Q6 is correct for delivery
+    - Store preferences in `agenda.*` section of config:
+      - `agenda.enabled: true`
+      - `agenda.delivery: "slack"` (or "email", "both", "terminal")
+      - `agenda.slack_user_id: "U..."` (if Slack selected)
+      - `agenda.time: "8:00 AM"` (default)
+    - Install the agenda skill: copy `skills/agenda/SKILL.md` from the plugin directory to `~/.claude/skills/agenda/SKILL.md`
+    - If they skip, set `agenda.enabled: false` and move on
+
+### Step 9: Documentation & Context
+
+18. **Documentation and resources**: "Last thing — any docs, pitch decks, wikis, or other context I should know about? This can be links (Google Docs, Notion, GitHub) or local files. The more context I have, the better I can represent your company."
     - Accept multiple links — store in `references.documentation_links` in the config as a list
     - Mention: "You can also drop local files (PDFs, markdown, specs) into `references/product-knowledge.md` in the plugin directory anytime — I'll use them as ground truth for all sales content."
     - This single step replaces both documentation collection AND the old "product knowledge" offer
 
-### Step 9: Generate Config
+### Step 10: Name Your Intern
+
+19. **Intern name**: "One more thing — want to give your intern a name? Instead of typing `/bd-intern`, you could use `/leo` or `/scout` or whatever you like. This creates a local shortcut."
+    - If they provide a name:
+      - Copy `~/.claude/skills/bd-intern/` to `~/.claude/skills/{name}/`
+      - In the copied SKILL.md, update the frontmatter `name:` field to the chosen name
+      - Replace all `/bd-intern` references with `/{name}` in the copied SKILL.md
+      - Add the intern's name prominently in the menu header (e.g., "**{Company}** | {Name} — What do you need?")
+      - Store in config as `intern.name: "{name}"`
+    - If they skip, no alias is created — `/bd-intern` works as-is
+
+### Step 11: Generate Config
 
 Write the collected information to `config/company.yaml` in the plugin directory, following the structure of `config/company.example.yaml`.
 
@@ -115,11 +143,13 @@ Map the answers:
 - Question 11 → `tools[]` section (each with name, category, use_case, has_mcp)
 - Questions 12-14 → `crm.*` and `paths.*` and `integrations.*`
 - Questions 15-16 → `competitors[]` and `common_loss_reasons`
-- Question 17 → `references.documentation_links[]`
+- Question 17 → `agenda.*` section (enabled, delivery, slack_user_id, time)
+- Question 18 → `references.documentation_links[]`
+- Question 19 → `intern.name`
 
 Use proper YAML formatting. Include comments for sections they skipped.
 
-### Step 10: Confirm
+### Step 12: Confirm
 
 Display:
 ```
@@ -139,19 +169,24 @@ Here's your profile:
 - Tools: {tools list}
 - Competitors: {list}
 - Docs: {documentation_links count} links saved
+- Agenda: {enabled — delivery channel} | {disabled}
+- Intern name: {name or "bd-intern (default)"}
 
 Try these commands:
-- /bd-intern pipeline — View your deal pipeline
+- /{intern_name or "bd-intern"} pipeline — View your deal pipeline
 - /prospect <company> — Research a prospect
 - /outreach <company> — Draft outreach
+- /agenda — Morning briefing (if enabled)
 
-Run /bd-intern setup anytime to reconfigure.
+Run /{intern_name or "bd-intern"} setup anytime to reconfigure.
 ```
+
+If the user created an alias, also install the agenda skill under the alias-friendly name (it stays as `/agenda` regardless).
 
 ## Notes
 - Be conversational, not form-like — this should feel like an onboarding chat, not a form
 - Accept brief answers — don't force long descriptions
 - If they seem impatient or say "skip" / "defaults", jump to generating config with sensible defaults for anything unanswered
-- Group questions naturally — don't rapid-fire all 17. Pause between sections with a brief transition like "Great. Now let's talk about your products." or "Almost done — a few questions about your pipeline."
+- Group questions naturally — don't rapid-fire all 19. Pause between sections with a brief transition like "Great. Now let's talk about your products." or "Almost done — a few questions about your pipeline."
 - The config file should be valid YAML that loads without errors
 - If a question doesn't apply (e.g., no competitors yet, no Slack), skip gracefully

@@ -134,6 +134,17 @@ references:
     - "https://notion.so/acme/pitch-deck"
   # Also drop local files into references/product-knowledge.md for ground truth
 
+# Daily agenda briefing
+agenda:
+  enabled: true                            # Set to false to disable
+  delivery: "slack"                        # "terminal", "slack", "email", or "both"
+  slack_user_id: "U0932T672CB"             # Your Slack member ID (for DM delivery)
+  time: "8:00 AM"                          # Preferred briefing time
+
+# Intern alias (optional — custom name for your agent)
+intern:
+  name: ~                                  # e.g., "leo", "scout" — creates /{name} shortcut
+
 # Integrations
 integrations:
   slack_channel: "#bd-pipeline"            # Slack channel for pipeline updates
