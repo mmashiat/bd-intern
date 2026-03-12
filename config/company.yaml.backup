@@ -1,0 +1,69 @@
+# Marvelgirl.co — BD Intern Config
+# Generated: 2026-03-04
+
+company:
+  name: "Marvelgirl"
+  website: "marvelgirl.co"
+  description: "Creates easy-to-understand content on crypto, AI, and deep tech for brands and protocols."
+  industry: "creator economy"
+  stage: "solo"
+  team_size: 3
+
+products:
+  - name: "Explainer / Short-Form Video"
+    description: "Short-form video content breaking down complex crypto, AI, and deep tech topics."
+  - name: "Sponsored Content"
+    description: "Sponsored posts and videos integrated into Marvelgirl's content channels."
+  - name: "Brand Packages"
+    description: "Full brand content packages combining video, posts, and cross-platform distribution."
+
+target_customers: "AI companies"
+typical_deal_size: "$10K/month"
+sales_cycle: "3 weeks"
+
+contact:
+  email: "mutmainnhamashiat@gmail.com"
+  name: "Mashiat"
+  role: "Founder"
+  channels:
+    - "Instagram"
+    - "Twitter"
+    - "LinkedIn"
+
+pipeline:
+  engagement_offer: "Intro call + sample content"
+
+brand_voice:
+  tone: "Friendly and approachable, yet authoritative"
+  avoid_words:
+    - "synergy"
+    - "leverage"
+    - "circle back"
+    - "touch base"
+    - "loop in"
+    - "low-hanging fruit"
+    - "move the needle"
+    - "deep dive"
+    - "alignment"
+    - "bandwidth"
+  differentiator: "10+ years of hands-on experience working in the tech industry, making complex topics genuinely accessible."
+
+crm:
+  tool: "google_sheets"
+  team_name: "Partnerships"
+
+paths:
+  meeting_notes: "~/.meeting-notes/"
+  research: "Research/"
+  content: "Content/"
+
+integrations:
+  slack_channel: ~
+
+competitors:
+  - name: "AskCatGPT"
+    notes: "Competing creator in the crypto/AI explainer space."
+  - name: "Claire Zau"
+    notes: "Competing creator in the crypto/AI explainer space."
+
+common_loss_reasons: "They already work with a bigger creator."

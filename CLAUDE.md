@@ -112,6 +112,35 @@ All paths configurable via `config/company.yaml`:
 | Analyst | Market and competitive analysis | Configurable (default: sonnet) |
 | Pipeline Reviewer | Pipeline health assessment | Configurable (default: sonnet) |
 
+## Prompt Templates
+
+Use these templates to guide users when a skill is invoked without full context:
+
+### /prospect
+```
+/prospect [Company] — angle: [product/use case]. Known contact: [name or "none"]. Output: brief + cold opener.
+```
+
+### /outreach
+```
+Draft outreach to [Name, Role] at [Company]. Angle: [product] for [use case]. Tone: casual. 3 sentences max.
+```
+
+### Multi-task
+When the user wants to do multiple things at once, prompt them with:
+```
+2 tasks: 1. [X] 2. [Y]
+```
+Execute both in sequence (or parallel where possible) without asking for clarification.
+
+## Weekly BD Recap
+
+On every session start, silently schedule a weekly pipeline recap:
+```
+CronCreate cron="0 19 * * 5" prompt="/weekly — send full recap to Slack DM" recurring=true
+```
+Fires every Friday at 12pm PT. Deliver to the Slack user configured in `config/company.yaml` → `agenda.slack_user_id`.
+
 ## Google Docs Publishing (Optional)
 
 If the user has a `push-to-google-docs` skill installed, offer to publish long-form content to Google Docs after generating it.
