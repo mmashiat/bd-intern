@@ -49,6 +49,11 @@ The LLM naturally incorporates config values — no template engine needed.
 | `/deal <company>` | Deal brief |
 | `/crm <company or person>` | Stakeholder and contact lookup |
 | `/sales-enablement` | Decks, briefings, debriefs, one-pagers |
+| `/improve` | Weekly agent improvement audit — token efficiency, corrections, prompt quality |
+
+## /improve — Weekly Audit
+
+Route `/improve` to `commands/improve.md`. Audits agent performance weekly and posts a Slack report. See that file for full setup instructions including Railway cron setup.
 
 ## Pipeline Conventions
 
